@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalog>
+  <widget>
+    <name>bb-quick-actions-omni-payment-wrapper-widget-ang</name>
+    <properties>
+      <property name="classId">
+        <value>QuickActionsOmniPaymentWrapperWidgetAngComponent</value>
+      </property>
+      <property name="src">
+        <value>$(itemRoot)/index.html</value>
+      </property>
+      <property name="render.requires">
+        <value>render-bb-widget-3</value>
+      </property>
+      <property name="title" label="Title" readonly="true" viewHint="admin,designModeOnly">
+        <value type="string">Quick Actions Omni Payment Wrapper Widget</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value>$(itemRoot)/icon.png</value>
+      </property>
+      <property name="label">
+        <value>Angular QuickActionsOmniPaymentWrapperWidgetAng Widget</value>
+      </property>
+      <property name="modalName" label="Name of the modal window. (Url friendly without spaces)" viewHint="admin,designModeOnly">
+        <value type="string">quick-actions-payment-template</value>
+      </property>
+    </properties>
+  </widget>
+</catalog>

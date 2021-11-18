@@ -1,0 +1,18 @@
+{
+  "backgrounds": [
+    {
+      "image": "rel:login-bg-1.png",
+      "size": "cover",
+      "positionX": "center",
+      "positionY": "center",
+      "repeat": "no-repeat"
+    },
+    {
+      "image": "rel:login-bg-2.png",
+      "size": "cover",
+      "positionX": "center",
+      "positionY": "center",
+      "repeat": "no-repeat"
+    }
+  ]
+}

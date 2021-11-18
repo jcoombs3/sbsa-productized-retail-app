@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+    <widget>
+        <name>bb-cards-management-journey-bundle-ang</name>
+        <properties>
+            <property name="classId" type="string">
+                <value>CardsManagementJourneyBundleModule</value>
+            </property>
+            <property name="src" type="string">
+                <value>$(itemRoot)/index.html</value>
+            </property>
+            <property name="render.requires" type="string">
+                <value>render-bb-widget-3</value>
+            </property>
+            <property name="title" label="Title" readonly="true" viewHint="admin,designModeOnly" type="string">
+                <value>Cards Management Journey Bundle</value>
+            </property>
+            <property name="thumbnailUrl" type="string">
+                <value>$(itemRoot)/icon.png</value>
+            </property>
+            <property name="groupByPaymentCardTypes" label="Group by card types" viewHint="text-input,admin">
+                <value type="string">Credit,Debit</value>
+            </property>
+            <property name="notificationTtl" label="Notification messages timeout" viewHint="text-input,admin">
+                <value type="long">5000</value>
+            </property>
+            <property name="version" type="string" readonly="true">
+                <value>0.1.0</value>
+            </property>
+        </properties>
+    </widget>
+</catalog>

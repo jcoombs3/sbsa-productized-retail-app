@@ -1,0 +1,872 @@
+{
+  "name": "container-bb-manageable-area-_-lp7xq",
+  "extends": "container-bb-manageable-area",
+  "children": [
+    {
+      "name": "bb-retail-app-ang-_-6b67a46a27a6",
+      "extends": "bb-retail-app-ang",
+      "AppConfig.googleAPIKey": "",
+      "area": "0",
+      "children": [
+        {
+          "name": "bb-impersonation-banner-widget-ang-_-01234567890a1",
+          "classId": "ImpersonationBannerWidgetComponent"
+        },
+        {
+          "name": "bb-layout-container-flex-ang-_-0e8ba1345fa6",
+          "classId": "LayoutContainerComponent",
+          "navigationType": "horizontal",
+          "children": [
+            {
+              "name": "bb-panel-container-ang-_-658f6dad56a4",
+              "classId": "PanelContainerComponent",
+              "title": "Branding Area",
+              "children": [
+                {
+                  "name": "bb-panel-container-ang-_-eb4245877e36",
+                  "classId": "PanelContainerComponent",
+                  "cssClasses": "d-block px-4",
+                  "children": [
+                    {
+                      "name": "bb-content-widget-ang-_-a2694f649a24",
+                      "classId": "ContentWidgetComponent",
+                      "content-defaultContent": {
+                        "kind": "content",
+                        "path": "logo-sml.svg"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "bb-panel-container-ang-_-3d30bb506ee2",
+              "classId": "PanelContainerComponent",
+              "title": "Right Topbar Area",
+              "children": [
+                {
+                  "name": "bb-column-container-ang-_-2ea6faa6e1c9",
+                  "classId": "ColumnContainerComponent",
+                  "containerClasses": "d-block",
+                  "children": [
+                    {
+                      "name": "bb-panel-container-ang-_-164433bc52dc",
+                      "classId": "PanelContainerComponent",
+                      "title": "Column 1",
+                      "config.canView": "Notifications.ManageNotifications.view AND ProductSummary.ProductSummary.view AND Actions.ManageActionRecipes.view",
+                      "columnClass": "align-self-center",
+                      "children": [
+                        {
+                          "name": "bb-routing-container-ang-_-25daa37eb4db",
+                          "classId": "NotificationsRetailRoutingContainerAngComponent",
+                          "input.notificationRouting": "memory notificationRouting",
+                          "output.selectedAccount": "router.navigate my-accounts/transactions {selectedAccount} details",
+                          "output.viewTransaction": "router.navigate my-accounts/transactions {selectedAccount} list",
+                          "output.viewConversation": "router.navigate more/messages/inbox/conversation {id}",
+                          "children": [
+                            {
+                              "name": "bb-notifications-badge-widget-ang-_-6e2c3ab2c9c9",
+                              "classId": "NotificationsBadgeWidgetComponent",
+                              "output.notificationRouting": "memory notificationRouting",
+                              "output.notificationsSettingsOpened": "item-navigate bb-panel-container-ang-_-021a3a40b49a",
+                              "allowedRoutes": "conversation-view, arrangement-view, transaction-view"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "bb-panel-container-ang-_-b0b6fbce3b93",
+                      "classId": "PanelContainerComponent",
+                      "title": "Column 2",
+                      "columnClass": "col",
+                      "children": [
+                        {
+                          "name": "bb-user-context-menu-widget-ang-_-038b3ac8715e",
+                          "classId": "UserContextMenuWidgetComponent",
+                          "showSingleContext": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "bb-panel-container-ang-_-f637e356897",
+                      "classId": "PanelContainerComponent",
+                      "title": "Column 3",
+                      "columnClass": "d-flex",
+                      "children": [
+                        {
+                          "name": "transaction-signing-widget-_-a5687c356859",
+                          "classId": "TransactionSigningWidgetComponent",
+                          "pollingCycleTime": 4000
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "bb-panel-container-ang-_-731ab39984bf",
+              "classId": "PanelContainerComponent",
+              "title": "Sidebar Area",
+              "cssClasses": "d-print-none",
+              "children": [
+                {
+                  "name": "bb-mega-menu-navigation-container-ang-_-cd8d8a6b45b3",
+                  "classId": "MegaMenuNavigationContainerComponent",
+                  "displayDescription": false,
+                  "displayIcon": false,
+                  "mainContainer": "bb-deck-container-ang-_-48a2b14d9c5f",
+                  "rows": "3",
+                  "secondaryContainer": "bb-panel-container-ang-_-bc0d4cb96963",
+                  "children": [
+                    {
+                      "name": "bb-panel-container-ang-_-a4ac02643c12",
+                      "classId": "PanelContainerComponent",
+                      "children": []
+                    },
+                    {
+                      "name": "bb-panel-container-ang-_-0457f5518848",
+                      "classId": "PanelContainerComponent",
+                      "children": []
+                    },
+                    {
+                      "name": "bb-panel-container-ang-_-24ffd8503595",
+                      "classId": "PanelContainerComponent",
+                      "children": []
+                    },
+                    {
+                      "name": "bb-panel-container-ang-_-05e67b669906",
+                      "classId": "PanelContainerComponent",
+                      "children": []
+                    },
+                    {
+                      "name": "bb-panel-container-ang-_-f7d8ca34cc7a",
+                      "classId": "PanelContainerComponent",
+                      "children": []
+                    },
+                    {
+                      "name": "bb-panel-container-ang-_-dd8b0420d4d8",
+                      "classId": "PanelContainerComponent",
+                      "children": []
+                    },
+                    {
+                      "name": "bb-panel-container-ang-_-47ad61751213",
+                      "classId": "PanelContainerComponent",
+                      "children": []
+                    },
+                    {
+                      "name": "bb-panel-container-ang-_-a0fe3e48ebe1",
+                      "classId": "PanelContainerComponent",
+                      "children": []
+                    },
+                    {
+                      "name": "bb-panel-container-ang-_-0e8cf8a7ef27",
+                      "classId": "PanelContainerComponent",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "bb-panel-container-ang-_-534cf2412dda",
+              "classId": "PanelContainerComponent",
+              "title": "Header Area",
+              "children": [
+                {
+                  "name": "bb-notifications-popups-widget-ang-_-8b57f336fdb0",
+                  "classId": "NotificationsPopupsWidgetComponent",
+                  "output.notificationRouting": "memory notificationRouting",
+                  "allowedRoutes": "conversation-view, arrangement-view, transaction-view",
+                  "pollingInterval": 30
+                }
+              ]
+            },
+            {
+              "name": "bb-panel-container-ang-_-c078cd6ac8ca",
+              "classId": "PanelContainerComponent",
+              "title": "Main Content Area",
+              "cssClasses": "d-block container bb-block--xl",
+              "children": [
+                {
+                  "name": "bb-deck-container-ang-_-48a2b14d9c5f",
+                  "classId": "DeckContainerComponent",
+                  "role": "main",
+                  "children": [
+                    {
+                      "name": "bb-panel-container-ang-_-0e4dcf7fb45d",
+                      "classId": "PanelContainerComponent",
+                      "title": "My Accounts",
+                      "route": "my-accounts",
+                      "route.data.custom.title": "My accounts - Retail Banking",
+                      "navIcon": "accounts",
+                      "config.canView": "ProductSummary.ProductSummary.view AND ProductSummary.ProductSummary.edit",
+                      "children": [
+                        {
+                          "name": "bb-column-container-ang-_-c7671d66bcd3",
+                          "classId": "ColumnContainerComponent",
+                          "children": [
+                            {
+                              "name": "bb-panel-container-ang-_-090f3dbda2d1",
+                              "classId": "PanelContainerComponent",
+                              "title": "Left side",
+                              "columnClass": "col-md-8",
+                              "children": [
+                                {
+                                  "name": "bb-accounts-transactions-journey-ang-_-a9a45eb3",
+                                  "classId": "AccountsTransactionsJourneyBundleModule"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "bb-panel-container-ang-_-147a2047f062",
+                              "classId": "PanelContainerComponent",
+                              "title": "right side",
+                              "columnClass": "col-md-4 pt-5",
+                              "children": [
+                                {
+                                  "name": "bb-panel-container-ang-_-b58576842a4c",
+                                  "classId": "PanelContainerComponent",
+                                  "cssClasses": "d-block bb-block--xl",
+                                  "children": [
+                                    {
+                                      "name": "bb-campaign-space-ang-_-245931b4340d",
+                                      "classId": "CampaignSpaceComponent",
+                                      "title": "Accounts and Transactions side banner",
+                                      "dimensions": "328x430"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "bb-panel-container-ang-_-d2ca98263664",
+                                  "classId": "PanelContainerComponent",
+                                  "cssClasses": "card d-block bb-block--xl",
+                                  "config.canView": "Payments.A2ATransfer.view OR Payments.SEPACT.view AND ProductSummary.ProductSummary.view",
+                                  "children": [
+                                    {
+                                      "name": "bb-quick-transfer-journey-ang-_-ceaf042ffa9a",
+                                      "classId": "QuickTransferJourneyComponent",
+                                      "title": "Quick Transfer Journey"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "bb-panel-container-ang-_-7641febc54aa",
+                                  "classId": "PanelContainerComponent",
+                                  "cssClasses": "d-block card p-2",
+                                  "children": [
+                                    {
+                                      "name": "bb-heading-widget-ang-_-edc64824a122",
+                                      "classId": "HeadingWidgetComponent",
+                                      "customClassName": "pb-0 px-3 pt-3 bb-block--sm",
+                                      "heading": "Quick Actions",
+                                      "headingType": "h2"
+                                    },
+                                    {
+                                      "name": "bb-navigation-link-widget-ang-_-c4e2e8a23ac2",
+                                      "classId": "NavigationLinkWidgetComponent",
+                                      "customNavClasses": "bb-navigation--link",
+                                      "layoutType": "vertical",
+                                      "rootLink": "{\"link\":{\"uuid\":\"\",\"label\":\"Quick Actions\",\"url\":\"retail-app/main/quick-actions\"}}"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "bb-panel-container-ang-_-78605d123ad0",
+                      "classId": "PanelContainerComponent",
+                      "title": "Transfers",
+                      "route": "",
+                      "config.canView": "Payments.A2ATransfer.view OR Payments.SEPACT.view OR Payments.A2ATransfer.view OR Payments.SEPACT.view AND ProductSummary.ProductSummary.view",
+                      "route.data.custom.title": "Transfers - Retail Banking",
+                      "cssClasses": "d-block container--fixed-width mx-auto",
+                      "navIcon": "add",
+                      "children": [
+                        {
+                          "name": "bb-panel-container-ang-_-6a58d5d5ef6d",
+                          "classId": "PanelContainerComponent",
+                          "children": [
+                            {
+                              "name": "bb-deck-container-ang-_-048f004c8da5",
+                              "classId": "DeckContainerComponent",
+                              "children": [
+                                {
+                                  "name": "bb-panel-container-ang-_-6012736f9119",
+                                  "classId": "PanelContainerComponent",
+                                  "title": "Make a Transfer",
+                                  "route": "make-a-transfer",
+                                  "route.data.custom.title": "Make a transfer - Transfer - Retail Banking",
+                                  "config.canView": "Payments.A2ATransfer.view OR Payments.SEPACT.view AND ProductSummary.ProductSummary.view",
+                                  "children": [
+                                    {
+                                      "name": "bb-heading-widget-ang-_-65d1a336",
+                                      "classId": "HeadingWidgetComponent",
+                                      "customClassName": "px-0",
+                                      "heading": "Make a Transfer",
+                                      "headingType": "h1",
+                                      "output.buttonAction": "navigation:null"
+                                    },
+                                    {
+                                      "name": "bb-panel-container-ang-_-bbfebefbe816",
+                                      "classId": "PanelContainerComponent",
+                                      "appearance": "card",
+                                      "cssClasses": "d-block card-body",
+                                      "children": [
+                                        {
+                                          "name": "bb-internal-transfer-wrapper-widget-ang-_-7bf601393322",
+                                          "classId": "InternalTransferWrapperWidgetAngComponent",
+                                          "enableApprovals": true,
+                                          "enablePaymentTemplate": true,
+                                          "enablePaymentTemplateSelector": true,
+                                          "paymentType": "INTERNAL_TRANSFER",
+                                          "output.redirectAfterSuccess": "navigation:bb-payord-upcoming-and-historical-payments-widget-ang-_-348784e66457",
+                                          "src": "$(contextRoot)/static/items/bb-omni-payment-wrapper-widget-ang/index.html",
+                                          "thumbnailUrl": "$(contextRoot)/static/items/bb-omni-payment-wrapper-widget-ang/icon.png"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "bb-panel-container-ang-_-6012726f9170",
+                                  "classId": "PanelContainerComponent",
+                                  "title": "Send Money to Member",
+                                  "route": "money-to-member",
+                                  "route.data.custom.title": "Send money to member - Transfer - Retail Banking",
+                                  "config.canView": "Payments.A2ATransfer.view OR Payments.SEPACT.view AND ProductSummary.ProductSummary.view",
+                                  "children": [
+                                    {
+                                      "classId": "HeadingWidgetComponent",
+                                      "customClassName": "px-0",
+                                      "heading": "Send Money to Member",
+                                      "headingType": "h1"
+                                    },
+                                    {
+                                      "name": "bb-panel-container-ang-_-bbfebefbe817",
+                                      "classId": "PanelContainerComponent",
+                                      "appearance": "card",
+                                      "cssClasses": "d-block card-body",
+                                      "children": [
+                                        {
+                                          "name": "bb-intrabank-transfer-widget-ang-_-7bf601393370092",
+                                          "classId": "InternalTransferWrapperWidgetAngComponent",
+                                          "enableApprovals": true,
+                                          "enablePaymentTemplate": true,
+                                          "enablePaymentTemplateSelector": true,
+                                          "paymentType": "INTRABANK_TRANSFER",
+                                          "output.redirectAfterSuccess": "navigation:bb-payord-upcoming-and-historical-payments-widget-ang-_-348784e66457",
+                                          "src": "$(contextRoot)/static/items/bb-omni-payment-wrapper-widget-ang/index.html",
+                                          "thumbnailUrl": "$(contextRoot)/static/items/bb-omni-payment-wrapper-widget-ang/icon.png"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "bb-panel-container-ang-_-2df75c2a4025",
+                                  "classId": "PanelContainerComponent",
+                                  "title": "Scheduled Transfers",
+                                  "route": "scheduled-transfers",
+                                  "route.data.custom.title": "Scheduled transfers - Transfer - Retail Banking",
+                                  "cssClasses": "d-block mt-5 pt-5",
+                                  "config.canView": "Payments.A2ATransfer.view OR Payments.SEPACT.view",
+                                  "children": [
+                                    {
+                                      "name": "bb-payord-upcoming-and-historical-payments-widget-ang-_-348784e66457",
+                                      "classId": "ManageUpcomingAndHistoricalPaymentsJourneyBundleModule"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "bb-panel-container-ang-_-d8d19a42b115",
+                                  "classId": "PanelContainerComponent",
+                                  "title": "Connected Accounts",
+                                  "route": "connected-accounts",
+                                  "route.data.custom.title": "Connected accounts - Transfer - Retail Banking",
+                                  "config.canView": "Payments.A2ATransfer.view",
+                                  "cssClasses": "d-block mt-5 pt-5",
+                                  "children": [
+                                    {
+                                      "name": "bb-connect-external-accounts-journey-ang-_-20b73d951cf9",
+                                      "classId": "ConnectExternalAccountsJourneyBundleModule"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "bb-panel-container-ang-_-70fe6349393a",
+                      "classId": "PanelContainerComponent",
+                      "title": "Bill Pay",
+                      "route": "billpay",
+                      "config.canView": "Contacts.USBillpayPayees.view OR Payments.USBillpayPayments.view  AND Contacts.USBillpayPayees-Search.execute AND Contacts.USBillpayPayees-Summary.view",
+                      "route.data.custom.title": "Bill pay - Retail Banking",
+                      "cssClasses": "d-block pt-5 mt-5",
+                      "navIcon": "assignment-ind",
+                      "children": [
+                        {
+                          "name": "bb-deck-container-ang-_-03e9bfbac140",
+                          "classId": "DeckContainerComponent",
+                          "children": [
+                            {
+                              "name": "bb-panel-container-ang-_-a3602c022413",
+                              "classId": "PanelContainerComponent",
+                              "title": "Pay Bills",
+                              "route": "pay-bills",
+                              "route.data.custom.title": "Pay a bill - Bill Pay - Retail Banking",
+                              "config.canView": "Contacts.USBillpayPayees.view OR Payments.USBillpayPayments.view",
+                              "children": [
+                                {
+                                  "name": "bb-manage-bill-payments-journey-_-cc21b0716910",
+                                  "classId": "PayBillsJourneyBundleModule"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "bb-panel-container-ang-_-6bea630078b0",
+                              "classId": "PanelContainerComponent",
+                              "title": "Pending Payments",
+                              "route": "pending-bills",
+                              "route.data.custom.title": "Pending payments - Bill Pay - Retail Banking",
+                              "cssClasses": "d-block container--fixed-width mx-auto",
+                              "config.canView": "Payments.USBillpayPayments.view",
+                              "children": [
+                                {
+                                  "name": "bb-manage-bill-payments-journey-_-4b503cfac04c",
+                                  "classId": "ManageBillPaymentsJourneyBundleModule"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "bb-panel-container-ang-_-141b760083e6",
+                              "classId": "PanelContainerComponent",
+                              "title": "History Payments",
+                              "cssClasses": "d-block container--fixed-width mx-auto",
+                              "route": "history-bills",
+                              "route.data.custom.title": "History payments - Bill Pay - Retail Banking",
+                              "config.canView": "Payments.USBillpayPayments.view",
+                              "children": [
+                                {
+                                  "name": "bb-manage-bill-payments-journey-_-cc21b0716918",
+                                  "classId": "ManageBillPaymentsHistoryJourneyBundleModule"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "bb-panel-container-ang-_-141b760083e0",
+                              "classId": "PanelContainerComponent",
+                              "cssClasses": "d-block container--fixed-width mx-auto",
+                              "title": "Manage Payee",
+                              "route": "manage-payees",
+                              "route.data.custom.title": "Manage payee - Bill Pay - Retail Banking",
+                              "config.canView": "Payments.USBillpayPayments.view",
+                              "children": [
+                                {
+                                  "name": "bb-manage-payees-journey-_-25c7650ea100",
+                                  "classId": "ManagePayeesJourneyBundleModule"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "bb-panel-container-ang-_-0bc16ef46967",
+                      "classId": "PanelContainerComponent",
+                      "title": "Analytics",
+                      "route": "insights",
+                      "config.canView": "Transactions.Transactions.view",
+                      "route.data.custom.title": "Analytics - Retail Banking",
+                      "cssClasses": "d-block container--fixed-width mx-auto",
+                      "navIcon": "insert-chart",
+                      "children": [
+                        {
+                          "name": "bb-deck-container-ang-_-12dc4fbf6cba",
+                          "classId": "DeckContainerComponent",
+                          "children": [
+                            {
+                              "name": "bb-panel-container-ang-_-f2e5d4d87078",
+                              "classId": "PanelContainerComponent",
+                              "title": "Cash Flow",
+                              "route": "cashflow",
+                              "route.data.custom.title": "Cash flow - Analytics - Retail Banking",
+                              "cssClasses": "d-block container--fixed-width mx-auto pt-5 mt-5",
+                              "children": [
+                                {
+                                  "name": "bb-turnovers-journey-ang-_-c161e277d7ec",
+                                  "classId": "TurnoversJourneyBundleModule"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "bb-panel-container-ang-_-f82c4b0a1837",
+                              "classId": "PanelContainerComponent",
+                              "title": "Spending Analysis",
+                              "route": "spending-analysis",
+                              "route.data.custom.title": "Spending analysis - Analytics - Retail Banking",
+                              "cssClasses": "d-block container--fixed-width mx-auto pt-5 mt-5",
+                              "children": [
+                                {
+                                  "name": "bb-income-spending-analysis-journey-ang-_-c22306e9e8b4",
+                                  "classId": "SpendingAnalysisBundleModule"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "bb-panel-container-ang-_-4ce9ab2af9d4",
+                              "classId": "PanelContainerComponent",
+                              "title": "Income Analysis",
+                              "route": "income-analysis",
+                              "route.data.custom.title": "Income analysis - Analytics - Retail Banking",
+                              "cssClasses": "d-block container--fixed-width mx-auto pt-5 mt-5",
+                              "children": [
+                                {
+                                  "name": "bb-income-spending-analysis-journey-ang-_-b9a23dd65cca",
+                                  "classId": "IncomeAnalysisBundleModule"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "bb-panel-container-ang-_-c1492bc5a3db",
+                      "classId": "PanelContainerComponent",
+                      "title": "Self Service",
+                      "route": "self-service",
+                      "config.canView": "Notifications.ManageNotifications.view AND ProductSummary.ProductSummary.view OR UserProfiles.ManageUserProfiles.view OR User.ManageAuthorizedUsers.view OR PersonalFinanceManagement.ManageCards.view OR Payments.StopChecks.view OR AccountStatements.ManageStatements.view",
+                      "route.data.custom.title": "Self service - Retail Banking",
+                      "children": [
+                        {
+                          "name": "bb-deck-container-ang-_-421ac94fd156",
+                          "classId": "DeckContainerComponent",
+                          "children": [
+                            {
+                              "name": "bb-panel-container-ang-_-d89fe64648b1",
+                              "classId": "PanelContainerComponent",
+                              "title": "My Profile",
+                              "route": "profile",
+                              "route.data.custom.title": "My profile - Self services - Retail Banking",
+                              "config.canView": "UserProfiles.ManageUserProfiles.view",
+                              "cssClasses": "d-block container--fixed-width mx-auto",
+                              "navIcon": "user",
+                              "children": [
+                                {
+                                  "name": "bb-heading-widget-ang-_-73ba0e079094",
+                                  "classId": "HeadingWidgetComponent",
+                                  "buttonClasses": "",
+                                  "customClassName": "px-0",
+                                  "heading": "My Profile",
+                                  "headingType": "h1",
+                                  "output.buttonAction": "navigation:null"
+                                },
+                                {
+                                  "name": "bb-panel-container-ang-_-366f8a83d9ac",
+                                  "classId": "PanelContainerComponent",
+                                  "children": [
+                                    {
+                                      "name": "bb-tab-container-ang-_-473e034a6914",
+                                      "classId": "TabContainerComponent",
+                                      "children": [
+                                        {
+                                          "name": "bb-panel-container-ang-_-2ac03286fafd",
+                                          "classId": "PanelContainerComponent",
+                                          "title": "Contact Details",
+                                          "route": "contact",
+                                          "cssClasses": "d-block mt-4",
+                                          "children": [
+                                            {
+                                              "name": "bb-user-manage-profile-widget-ang-_-e79630967519",
+                                              "classId": "UserManageProfileWidgetComponent",
+                                              "title": "User Manage Profile Widget",
+                                              "label": "User Manage Profile Widget"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "bb-panel-container-ang-_-2cebfc31d51c",
+                                          "classId": "PanelContainerComponent",
+                                          "title": "Login & Security",
+                                          "route": "security",
+                                          "cssClasses": "d-block mt-4",
+                                          "children": [
+                                            {
+                                              "name": "bb-user-identity-security-center-widget-ang-_-e265ef9279b6",
+                                              "classId": "UserIdentitySecurityCenterWidgetComponent"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "bb-panel-container-ang-_-d89fe64648c2",
+                                          "classId": "PanelContainerComponent",
+                                          "title": "Registered Devices",
+                                          "route": "registered-devices",
+                                          "config.canView": "UserProfiles.ManageUserProfiles.view AND Device.ManageDevices.view",
+                                          "cssClasses": "d-block mt-4",
+                                          "children": [
+                                            {
+                                              "name": "bb-manage-devices-widget-ang-_-e79630967519",
+                                              "classId": "DeviceInformationWidgetComponent",
+                                              "title": "Device Management Widget"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "classId": "PanelContainerComponent",
+                              "title": "Authorized Users",
+                              "route": "authorized-users",
+                              "route.data.custom.title": "Authorized users - Self services - Retail Banking",
+                              "config.canView": "User.ManageAuthorizedUsers.view",
+                              "cssClasses": "d-block container--fixed-width mx-auto pt-5 mt-5",
+                              "navIcon": "verified-user",
+                              "children": [
+                                {
+                                  "classId": "AuthorizedUsersJourneyBundleModule"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "bb-panel-container-ang-_-b5f4c74829a1",
+                              "classId": "PanelContainerComponent",
+                              "title": "Manage Cards",
+                              "route": "manage-cards",
+                              "route.data.custom.title": "Manage cards - Self services - Retail Banking",
+                              "config.canView": "PersonalFinanceManagement.ManageCards.view",
+                              "cssClasses": "d-block container--fixed-width mx-auto",
+                              "navIcon": "credit-card",
+                              "children": [
+                                {
+                                  "name": "bb-cards-management-journey-ang-_-a3b45ed2",
+                                  "classId": "CardsManagementJourneyBundleModule"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "bb-panel-container-ang-_-021a3a40b49a",
+                              "classId": "PanelContainerComponent",
+                              "title": "Manage Notifications",
+                              "route": "product-list",
+                              "route.data.custom.title": "Manage notifications - Self services - Retail Banking",
+                              "config.canView": "Notifications.ManageNotifications.view AND ProductSummary.ProductSummary.view AND Actions.ManageActionRecipes.view",
+                              "cssClasses": "d-block container--fixed-width mx-auto",
+                              "children": [
+                                {
+                                  "classId": "ActionsRetailNotificationPreferencesJourneyBundleModule"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "bb-panel-container-ang-_-793b3acf197b",
+                              "classId": "PanelContainerComponent",
+                              "title": "Manage Contacts",
+                              "route": "manage-contacts",
+                              "route.data.custom.title": "Manage contacts - Self services - Retail Banking",
+                              "config.canView": "Contacts.Contacts.view",
+                              "cssClasses": "d-block container--fixed-width mx-auto",
+                              "navIcon": "contacts",
+                              "children": [
+                                {
+                                  "name": "bb-contact-manager-journey-ang-_-785bd7dc6e3b",
+                                  "classId": "ContactManagerJourneyBundleModule"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "bb-panel-container-ang-_-010f40aa70ef",
+                              "classId": "PanelContainerComponent",
+                              "title": "Stop Checks",
+                              "route": "stop-checks",
+                              "route.data.custom.title": "Stop checks - Self services - Retail Banking",
+                              "config.canView": "Payments.StopChecks.view",
+                              "cssClasses": "d-block container--fixed-width mx-auto",
+                              "children": [
+                                {
+                                  "name": "bb-deck-container-ang-_-e831ef3dfd82",
+                                  "classId": "DeckContainerComponent",
+                                  "children": [
+                                    {
+                                      "name": "bb-panel-container-ang-_-0052f3ed8348",
+                                      "classId": "PanelContainerComponent",
+                                      "title": "View",
+                                      "route": "view",
+                                      "children": [
+                                        {
+                                          "name": "bb-heading-widget-ang-_-e5ad3ac2c046",
+                                          "classId": "HeadingWidgetComponent",
+                                          "buttonClasses": "btn btn-primary",
+                                          "buttonTitle": "Create",
+                                          "customClassName": "px-0",
+                                          "heading": "Stop Checks",
+                                          "headingType": "h1",
+                                          "iconClasses": "add",
+                                          "output.buttonAction": "navigation:bb-panel-container-ang-_-e8b07f6f1f45"
+                                        },
+                                        {
+                                          "name": "bb-panel-container-ang-_-b1e621bc9072",
+                                          "classId": "PanelContainerComponent",
+                                          "appearance": "card",
+                                          "cssClasses": "d-block card-body",
+                                          "children": [
+                                            {
+                                              "name": "bb-payord-stop-checks-list-widget-ang-_-1c878f5d2b6e",
+                                              "classId": "PayordStopChecksListWidgetAngComponent"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "bb-panel-container-ang-_-e8b07f6f1f45",
+                                      "classId": "PanelContainerComponent",
+                                      "title": "Create",
+                                      "route": "create",
+                                      "children": [
+                                        {
+                                          "name": "bb-heading-widget-ang-_-b22fd6f64d92",
+                                          "classId": "HeadingWidgetComponent",
+                                          "buttonClasses": "btn btn-link px-0 mx-0 mb-3",
+                                          "buttonTitle": "Back to stop checks",
+                                          "customClassName": "px-0 pt-4 pb-5 d-flex flex-column-reverse align-items-start",
+                                          "heading": "Create Stop Check",
+                                          "headingType": "h1",
+                                          "iconClasses": "arrow-back",
+                                          "output.buttonAction": "navigation:bb-deck-container-ang-_-e831ef3dfd82"
+                                        },
+                                        {
+                                          "name": "bb-panel-container-ang-_-d9ddd53a5e20",
+                                          "classId": "PanelContainerComponent",
+                                          "appearance": "card",
+                                          "cssClasses": "d-block card-body",
+                                          "children": [
+                                            {
+                                              "name": "bb-payord-stop-checks-widget-ang-_-ce883be1a46e",
+                                              "classId": "PayordStopChecksWidgetAngComponent",
+                                              "output.navigateOnSubmit": "navigation:bb-deck-container-ang-_-e831ef3dfd82"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "bb-panel-container-ang-_-7fda9ddd1233",
+                              "classId": "PanelContainerComponent",
+                              "title": "Download Statements",
+                              "route": "download-statements",
+                              "route.data.custom.title": "Download statements - Self services - Retail Banking",
+                              "config.canView": "AccountStatements.ManageStatements.view",
+                              "cssClasses": "d-block container--fixed-width mx-auto",
+                              "navIcon": "description",
+                              "children": [
+                                {
+                                  "classId": "AccountStatementRetailJourneyBundleModule"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "bb-panel-container-ang-_-bc0d4cb96963",
+                      "classId": "PanelContainerComponent",
+                      "title": "more",
+                      "route": "more",
+                      "config.canView": "PersonalFinanceManagement.ManageBudgets.view OR MessageCenter.ManageMessages.view OR PersonalFinanceManagement.Places.view",
+                      "icon": "edit",
+                      "navIcon": "donut-small",
+                      "children": [
+                        {
+                          "name": "bb-deck-container-ang-_-7ba18777b620",
+                          "classId": "DeckContainerComponent",
+                          "children": [
+                            {
+                              "name": "bb-panel-container-ang-_-3af197932ba6",
+                              "classId": "PanelContainerComponent",
+                              "title": "Budgets",
+                              "route": "budgets",
+                              "config.canView": "PersonalFinanceManagement.ManageBudgets.view",
+                              "route.data.custom.title": "Budgets - Retail Banking",
+                              "cssClasses": "d-block container--fixed-width mx-auto pt-5 mt-5",
+                              "navIcon": "donut-small",
+                              "children": [
+                                {
+                                  "name": "bb-budget-journey-ang-_-593e14585fbe",
+                                  "classId": "BudgetJourneyBundleModule"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "bb-panel-container-ang-_-6857d8d2a070",
+                              "classId": "PanelContainerComponent",
+                              "title": "Messages",
+                              "route": "messages",
+                              "config.canView": "MessageCenter.ManageMessages.view",
+                              "route.data.custom.title": "Messages - Retail Banking",
+                              "countersToken": "messages",
+                              "cssClasses": "d-block container--fixed-width mx-auto",
+                              "navIcon": "mail",
+                              "children": [
+                                {
+                                  "classId": "MessagesClientInboxJourneyBundleModule"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "bb-panel-container-ang-_-0d0dcf1b6fb6",
+                              "classId": "PanelContainerComponent",
+                              "title": "Find Branches and ATMs",
+                              "route": "find-us",
+                              "config.canView": "PersonalFinanceManagement.Places.view",
+                              "route.data.custom.title": "Find branches and ATMs - Retail Banking",
+                              "cssClasses": "d-block container--fixed-width mx-auto pt-5 mt-5",
+                              "navIcon": "map",
+                              "children": [
+                                {
+                                  "name": "bb-panel-container-ang-_-4e0faa8ba45a",
+                                  "classId": "PanelContainerComponent",
+                                  "children": [
+                                    {
+                                      "name": "bb-places-journey-ang-_-e3e7a828865d",
+                                      "classId": "PlacesJourneyBundleModule",
+                                      "apiKey": ""
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

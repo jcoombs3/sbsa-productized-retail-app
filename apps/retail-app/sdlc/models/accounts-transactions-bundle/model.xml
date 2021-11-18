@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+    <widget>
+        <name>bb-accounts-transactions-journey-bundle-ang</name>
+        <properties>
+            <property name="classId" type="string">
+                <value>AccountsTransactionsJourneyBundleModule</value>
+            </property>
+            <property name="src" type="string">
+                <value>$(itemRoot)/index.html</value>
+            </property>
+            <property name="render.requires" type="string">
+                <value>render-bb-widget-3</value>
+            </property>
+            <property name="title" label="Title" readonly="true" viewHint="admin,designModeOnly" type="string">
+                <value>Accounts and Transactions Journey Bundle</value>
+            </property>
+            <property name="thumbnailUrl" type="string">
+                <value>$(itemRoot)/icon.png</value>
+            </property>
+            <property name="apiKey" label="Google Maps API Key" viewHint="text-input,admin" type="string">
+                <value></value>
+            </property>
+            <property name="showCheckImages" label="Display check images in transaction details" viewHint="checkbox,admin" type="string">
+                <value>false</value>
+            </property>
+            <property name="version" type="string" readonly="true">
+                <value>0.2.0</value>
+            </property>
+        </properties>
+    </widget>
+</catalog>

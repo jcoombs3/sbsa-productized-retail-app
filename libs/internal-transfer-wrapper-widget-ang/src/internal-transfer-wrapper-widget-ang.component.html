@@ -1,0 +1,12 @@
+<ng-container *ngIf="paymentType$ | async as paymentType; else defaultTmpl">
+  <bb-payord-omni-payment-widget-ang
+    [paymentConfig]="getPaymentConfig(paymentType)"
+    [businessFunction]="getBusinessFunction(paymentType)"
+    [options]="(options$ | async) || {}"
+    [selectedPayment]="upcomingPaymentEditItem$ | async"
+    (afterSuccessRedirect)="onAfterSuccessRedirect()"
+  ></bb-payord-omni-payment-widget-ang>
+</ng-container>
+<ng-template #defaultTmpl>
+  <bb-payord-omni-payment-widget-ang></bb-payord-omni-payment-widget-ang>
+</ng-template>

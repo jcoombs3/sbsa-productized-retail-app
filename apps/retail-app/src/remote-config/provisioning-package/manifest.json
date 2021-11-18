@@ -1,0 +1,8 @@
+{
+  "name" : "backbase-retail-prototypes",
+  "provisioningItems" : [ {
+    "name" : "backbase-retail-prototypes",
+    "itemType" : "remote-config:/project",
+    "location" : "/project.zip"
+  } ]
+}

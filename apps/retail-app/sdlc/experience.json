@@ -1,0 +1,283 @@
+{
+  "$schema": "../../../node_modules/@bb-cli/bb/node_modules/@backbase/sdlc-schema/experience.schema.json",
+  "name": "retail-app",
+  "title": "Retail App",
+  "locales": ["en","es"],
+  "properties": {
+    "AccessDeniedPage": "retail-app/login?error=accessdenied",
+    "DefaultLandingPage": "retail-app/select-context",
+    "ErrorPage": "retail-app/error",
+    "LoginPage": "retail-app/redirect",
+    "thumbnailUrl": "/Retail App/"
+  },
+  "contentDirs": {
+    "default": "apps/retail-app/sdlc/content",
+    "shared": "shared"
+  },
+  "cxSources": [
+    "node_modules/@backbase",
+    "dist/provisioning-packages/cx6/retail-app.zip",
+    "collections/collection-bb-web-sdk-1.16.3.zip",
+    "apps/retail-app/sdlc/models"
+  ],
+  "environments": {
+    "default": {
+      "authorization": {
+        
+        "authUrl": "http://localhost:8180/auth",
+        "clientId": "bb-web-client",
+        "scope": "openid",
+        "kind": "hybrid",
+        "realm": "backbase",
+        "landingPageUrl": "retail-app/select-context",
+        "loginPageUrl": "retail-app/redirect",
+        "maxInactivityDuration": 300
+      
+      },
+      "entitlements": {
+        "enable": true,
+        "uri": "/access-control/client-api/v2/accessgroups/users/permissions/summary"
+      },
+      "provisioning": {
+        "type": "cx",
+        "outputDir": "./dist/experiences/retail-app/remote",
+        "permissions": {
+          "anonymousConsumer": {
+            "ROLE_group_user": "CONSUMER",
+            "ROLE_group_admin": "ADMIN",
+            "ROLE_group_manager": "ADMIN",
+            "ROLE_group_master page designer": "ADMIN",
+            "ROLE_ANONYMOUS": "CONSUMER"
+          },
+          "userConsumer": {
+            "ROLE_group_user": "CONSUMER",
+            "ROLE_group_manager": "ADMIN",
+            "ROLE_group_admin": "ADMIN",
+            "ROLE_group_master page designer": "ADMIN"
+          }
+        },
+        "linkRoot": "",
+        "staticResourcesRoot": "/api/portal/static/items"
+      }
+    },
+    "docker": {
+      "provisioning": {
+        "type": "nginx", 
+        "outputDir": "dist/experiences/retail-app/docker",
+        "baseHref": "http://localhost:8080/retail-app",
+        "apiRoot": "https://localhost/api"
+      },
+      "entitlements": {
+        "enable": true,
+        "uri": "/access-control/client-api/v2/accessgroups/users/permissions/summary"
+      },
+      "authorization": {
+        "kind": "hybrid",
+        "authUrl": "https://localhost/auth",
+        "clientId": "bb-web-client",
+        "realm": "backbase",
+        "scope": "openid",
+        "landingPageUrl": "select-context",
+        "loginPageUrl": "redirect"
+      }
+    }
+  },
+  "menus": {
+    "master-pages": [
+      {
+        "section": "LeanMasterPage",
+        "title": "LeanMasterPage",
+        "page": {
+          "extends": "page-bb-default",
+          "name": "LeanMasterPage",
+          "title": "Lean Master Page",
+          "innerWrapperClass": "bg-gray-light-300",
+          "children": [
+            {
+              "fragment": "./pages/lean-master-page.json"
+            }
+          ]
+        }
+      }
+    ],
+    "special-pages": [
+      {
+        "section": "error",
+        "title": "Error",
+        "permission": "anonymousConsumer",
+        "page": {
+          "extends": "LeanMasterPage",
+          "title": "Something went wrong",
+          "innerWrapperClass": "",
+          "outerWrapperClass": "",
+          "children": [
+            {
+              "fragment": "./pages/error.json"
+            }
+          ]
+        }
+      },
+      
+      {
+        "section": "redirect",
+        "title": "Redirect",
+        "permission": "anonymousConsumer",
+        "page": {
+          "extends": "LeanMasterPage",
+          "title": "Redirect",
+          "children": [
+            {
+              "fragment": "./pages/redirect.json"
+            }
+          ]
+        }
+      },
+      
+      {
+        "section": "consent",
+        "title": "Consent",
+        "permission": "userConsumer",
+        "page": {
+          "extends": "LeanMasterPage",
+          "title": "Consent",
+          "innerWrapperClass": "",
+          "children": [
+            {
+              "fragment": "./pages/consent.json"
+            }
+          ]
+        }
+      },
+      {
+        "section": "self-enrollment",
+        "title": "Self Enrollment",
+        "permission": "anonymousConsumer",
+        "page": {
+          "extends": "LeanMasterPage",
+          "title": "Self Enrollment",
+          "innerWrapperClass": "",
+          "children": [
+            {
+              "fragment": "./pages/self-enrollment.json"
+            }
+          ]
+        }
+      },
+      {
+        "section": "select-context",
+        "title": "Select Context",
+        "permission": "anonymousConsumer",
+        "page": {
+          "extends": "LeanMasterPage",
+          "title": "Select Context",
+          "children": [
+            {
+              "fragment": "./pages/select-context.json"
+            }
+          ]
+        }
+      }
+    ],
+    "main": [
+      {
+        "section": "index",
+        "friendlyUrl": "retail-app",
+        "title": "Home",
+        "permission": "userConsumer",
+        "page": {
+          "extends": "LeanMasterPage",
+          "title": "Home",
+          "innerWrapperClass": "",
+          "children": [
+            {
+              "fragment": "./pages/home.json"
+            }
+          ]
+        }
+      },
+      {
+        "type": "menu",
+        "section": "quick-actions",
+        "title": "Quick Actions",
+        "permission": "userConsumer",
+        "children": [
+          {
+            "type": "deep",
+            "title": "Manage Accounts",
+            "deepPath": "my-accounts/manage",
+            "icon": "settings",
+            "permission": "userConsumer",
+            "properties": {
+              "config.canView": "ProductSummary.ProductSummary.view AND ProductSummary.ProductSummary.edit"
+            }
+          },
+          {
+            "type": "deep",
+            "title": "Set Travel Notice",
+            "deepPath": "self-service/manage-cards/travel-notice",
+            "icon": "flight",
+            "permission": "userConsumer",
+            "properties": {
+              "config.canView": "PersonalFinanceManagement.ManageCards.view"
+            }
+          },
+          {
+            "type": "deep",
+            "title": "Pay a Bill",
+            "deepPath": "billpay/pay-bills",
+            "icon": "receipt",
+            "permission": "userConsumer",
+            "properties": {
+              "config.canView": "Contacts.USBillpayPayees.view OR Payments.USBillpayPayments.view"
+            }
+          },
+          {
+            "type": "deep",
+            "title": "Download Statements",
+            "deepPath": "self-service/download-statements",
+            "icon": "description",
+            "permission": "userConsumer",
+            "properties": {
+              "config.canView": "AccountStatements.ManageStatements.view"
+            }
+          },
+          {
+            "type": "deep",
+            "title": "Manage Notifications",
+            "deepPath": "self-service/product-list/manage-notifications",
+            "icon": "notifications-active",
+            "permission": "userConsumer",
+            "properties": {
+              "config.canView": "Notifications.ManageNotifications.view AND ProductSummary.ProductSummary.view AND Actions.ManageActionRecipes.view"
+            }
+          },
+          {
+            "type": "deep",
+            "title": "Find Branches and ATMS",
+            "deepPath": "more/find-us",
+            "icon": "room",
+            "permission": "userConsumer",
+            "properties": {
+              "config.canView": "PersonalFinanceManagement.Places.view"
+            }
+          }
+        ]
+      },
+      {
+        "type": "menu",
+        "section": "index-page-link",
+        "title": "Homepage link",
+        "permission": "userConsumer",
+        "children": [
+          {
+            "section": "index",
+            "url": "index",
+            "icon": "",
+            "title": "Back to homepage",
+            "permission": "userConsumer"
+          }
+        ]
+      }
+    ]
+  }
+}

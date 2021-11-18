@@ -1,0 +1,44 @@
+{
+  "name": "container-bb-manageable-area-_-vyekhg",
+  "extends": "container-bb-manageable-area",
+  "children": [
+    {
+      "name": "bb-retail-app-ang-_-e5c4f41d1c18",
+      "extends": "bb-retail-app-ang",
+      "area": "0",
+      "children": [
+        {
+          "name": "bb-panel-container-ang-_-0c58e89479f0",
+          "classId": "PanelContainerComponent",
+          "cssClasses": "d-flex justify-content-center align-items-center align-content-center text-center h-100vh p-4",
+          "children": [
+            {
+              "name": "bb-content-widget-ang-_-b98dc432e119",
+              "classId": "ContentWidgetComponent",
+              "content-defaultContent": {
+                "kind": "content",
+                "path": "fogg-no-comments-sm.png"
+              }
+            },
+            {
+              "name": "bb-content-widget-ang-_-b635af86fb21",
+              "classId": "ContentWidgetComponent",
+              "content-defaultContent": {
+                "kind": "content",
+                "path": "notFoundText.json"
+              },
+              "imageClasses": "text-center"
+            },
+            {
+              "name": "bb-navigation-link-widget-ang-_-d4e2e8a23ac2",
+              "classId": "NavigationLinkWidgetComponent",
+              "customNavClasses": "btn",
+              "layoutType": "vertical",
+              "rootLink": "{\"link\":{\"uuid\":\"\",\"label\":\"\",\"url\":\"retail-app/main/index-page-link\"}}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

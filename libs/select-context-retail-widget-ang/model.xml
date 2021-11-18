@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalog>
+  <widget>
+    <name>bb-select-context-retail-widget-ang</name>
+    <properties>
+      <property name="classId">
+        <value>SelectContextRetailWidgetAngComponent</value>
+      </property>
+      <property name="src">
+        <value>$(itemRoot)/index.html</value>
+      </property>
+      <property name="render.requires">
+        <value>render-bb-widget-3</value>
+      </property>
+      <property name="title" label="Title" readonly="true" type="string" viewHint="admin,designModeOnly">
+        <value>Select Context Retail</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value>$(itemRoot)/icon.png</value>
+      </property>
+      <property name="pageSize" label="Number of service agreements to load per page" type="long" viewHint="text-input,manager">
+        <value>20</value>
+      </property>
+      <property name="showSearchAfter" label="Show search if more than service agreements" type="long" viewHint="text-input,admin">
+        <value>20</value>
+      </property>
+      <property name="includeCurrentContext" label="Include current context" type="boolean" viewHint="checkbox,admin,designModeOnly">
+        <value>false</value>
+      </property>
+      <property name="selectContextRedirectPage" label="Redirect after successful context select" type="string" viewHint="text-input,admin,designModeOnly">
+        <value>mpa:/index</value>
+      </property>
+      <property name="output.back" label="Navigation after clicking back" type="string" viewHint="text-input,admin,designModeOnly">
+        <value>navigation-url:/login</value>
+      </property>
+    </properties>
+  </widget>
+</catalog>

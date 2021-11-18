@@ -1,0 +1,19 @@
+<ng-container *ngIf="isConfigurationSet()">
+  <bb-routable-modal
+    [showHeader]="true"
+    [modalTitle]="paymentTypeConfiguration?.name || ''"
+    [modalWindowName]="modalName"
+    [closeButton]="true"
+    (visibilityChange)="onModalToggle($event)"
+  >
+    <ng-container *ngIf="(isModalOpened$ | async)">
+      <bb-payord-omni-payment-widget-ang
+        *ngIf="paymentOrder"
+        [paymentConfig]="paymentTypeConfiguration"
+        [businessFunction]="paymentTypeConfiguration?.businessFunction"
+        [options]="getWidgetOptions()"
+        [selectedPayment]="paymentOrder"
+      ></bb-payord-omni-payment-widget-ang>
+    </ng-container>
+  </bb-routable-modal>
+</ng-container>
