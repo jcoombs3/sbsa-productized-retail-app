@@ -9,11 +9,10 @@ if (environment.production) {
   enableProdMode();
 }
 
-
 /**
  * Warning: Modification of this section of the code
  * may prevent automatic updates of this project in the future.
- * More details: https://community.backbase.com/documentation/Retail-Apps/latest/web_app_upgradability_understand 
+ * More details: https://community.backbase.com/documentation/Retail-Apps/latest/web_app_upgradability_understand
  */
 const start = registerSingleApp((extraProviders: Array<StaticProvider>) =>
   platformBrowserDynamic(extraProviders).bootstrapModule(AppModule),
@@ -21,11 +20,10 @@ const start = registerSingleApp((extraProviders: Array<StaticProvider>) =>
 
 if (environment.bootstrap) {
   const { services, pageModel } = environment.bootstrap;
-  start(services).then(app => {
+  start(services).then((app) => {
     app.bootstrap(pageModel, { parentName: '', index: 0 });
   });
 }
 /**
- * End of the section 
+ * End of the section
  */
-

@@ -364,6 +364,7 @@
     }
   },
   "cli": {
+    "analytics": false,
     "warnings": {
       "typescriptMismatch": false,
       "versionMismatch": false

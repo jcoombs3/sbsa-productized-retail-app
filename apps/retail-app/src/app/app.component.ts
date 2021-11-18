@@ -9,13 +9,13 @@ import { filter, map } from 'rxjs/operators';
    * may prevent automatic updates of this project in the future.
    * More details: https://community.backbase.com/documentation/Retail-Apps/latest/web_app_upgradability_understand
    */
-  
-/**
- * Warning: Modification of the app selector
- * may prevent automatic updates of this project in the future.
- * More details: https://community.backbase.com/documentation/Retail-Apps/latest/web_app_upgradability_understand 
- */
-selector: 'bb-retail-app',
+
+  /**
+   * Warning: Modification of the app selector
+   * may prevent automatic updates of this project in the future.
+   * More details: https://community.backbase.com/documentation/Retail-Apps/latest/web_app_upgradability_understand
+   */
+  selector: 'bb-retail-app',
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {

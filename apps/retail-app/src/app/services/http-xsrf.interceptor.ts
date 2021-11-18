@@ -1,7 +1,7 @@
 /**
  * Warning: Modification of this file
  * may prevent automatic updates of this project in the future.
- * More details: https://community.backbase.com/documentation/Retail-Apps/latest/web_app_upgradability_understand 
+ * More details: https://community.backbase.com/documentation/Retail-Apps/latest/web_app_upgradability_understand
  */
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpXsrfTokenExtractor } from '@angular/common/http';
 import { Observable } from 'rxjs';

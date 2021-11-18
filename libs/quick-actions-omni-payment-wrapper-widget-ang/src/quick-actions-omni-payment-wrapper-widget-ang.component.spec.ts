@@ -8,9 +8,8 @@ describe('QuickActionsOmniPaymentWrapperWidgetAngComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QuickActionsOmniPaymentWrapperWidgetAngComponent ]
-    })
-    .compileComponents();
+      declarations: [QuickActionsOmniPaymentWrapperWidgetAngComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

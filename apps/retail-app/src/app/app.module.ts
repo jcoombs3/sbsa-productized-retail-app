@@ -17,7 +17,11 @@ import { WebSdkApiModule, PAGE_CONFIG, PageConfig } from '@backbase/foundation-a
 import { BackbaseStoreModule } from '@backbase/foundation-ang/store';
 import { ContainersModule } from '@backbase/universal-ang/containers';
 import { RemoteConfigModule, RemoteConfigService } from '@backbase/remote-config-ang';
-import { MegaMenuNavigationContainerModule, MegaMenuContainerConfig, MEGA_MENU_CONTAINER_CONFIG } from '@backbase/universal-ang/navigation';
+import {
+  MegaMenuNavigationContainerModule,
+  MegaMenuContainerConfig,
+  MEGA_MENU_CONTAINER_CONFIG,
+} from '@backbase/universal-ang/navigation';
 import { LayoutContainerModule } from '@backbase/universal-ang/layouts';
 import { HeadingWidgetModule } from '@backbase/universal-ang/heading';
 import { ContentWidgetModule } from '@backbase/universal-ang/content';
@@ -53,20 +57,23 @@ import { CONSENT_BASE_PATH } from '@backbase/data-ang/consent';
 import { StepUpConfig } from './components/step-up/step-up-config';
 import { bundlesDefinition } from './bundles-definition';
 
-export function getBasePath(servicePath: string) { return (config: PageConfig) => `${config.apiRoot}/${servicePath}`; }
+export function getBasePath(servicePath: string) {
+  return (config: PageConfig) => `${config.apiRoot}/${servicePath}`;
+}
 
+export function applicationInitializer(remoteConfig: RemoteConfigService<RetailAppRemoteConfig>) {
+  return () => remoteConfig.fetchAndActivate();
+}
 
-export function applicationInitializer(remoteConfig: RemoteConfigService<RetailAppRemoteConfig>) { return () => remoteConfig.fetchAndActivate(); }
-
-
-
-export function configureMegaMenuPagesRendering(remoteConfig: RemoteConfigService<RetailAppRemoteConfig>): Partial<MegaMenuContainerConfig> {
+export function configureMegaMenuPagesRendering(
+  remoteConfig: RemoteConfigService<RetailAppRemoteConfig>,
+): Partial<MegaMenuContainerConfig> {
   return {
     linksMap: (links: any[]) => {
-      const hiddenPages: { [key: string]: boolean; } = {
+      const hiddenPages: { [key: string]: boolean } = {
         'billpay,manage-payees': true,
         'self-service,manage-contacts': !remoteConfig.getValue('show_contacts'),
-      }
+      };
       links.forEach((link) =>
         link.children?.forEach((child: any, index: number) => {
           if (hiddenPages[child.id]) link.children.splice(index, 1);
@@ -74,16 +81,11 @@ export function configureMegaMenuPagesRendering(remoteConfig: RemoteConfigServic
       );
       return links;
     },
-  }
+  };
 }
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    StepUpAuthenticationComponent,
-    SessionTimeoutComponent
-  ],
+  declarations: [AppComponent, StepUpAuthenticationComponent, SessionTimeoutComponent],
   imports: [
     BrowserModule,
     StoreModule.forRoot({}),
@@ -103,7 +105,7 @@ export function configureMegaMenuPagesRendering(remoteConfig: RemoteConfigServic
       },
       lazyModules: bundlesDefinition,
     }),
-    RouterModule.forRoot([], { initialNavigation: "disabled", useHash: true }),
+    RouterModule.forRoot([], { initialNavigation: 'disabled', useHash: true }),
     environment.animation ? BrowserAnimationsModule : NoopAnimationsModule,
     NotificationsRetailRoutingContainerAngModule,
     FormsModule,
@@ -117,13 +119,13 @@ export function configureMegaMenuPagesRendering(remoteConfig: RemoteConfigServic
     BackbaseStoreModule,
     ContainersModule,
     RemoteConfigModule.forRoot({
-        appName: 'bb-retail-app-ang',
-        appVersion: '2021.11-beta',
-        defaults: remoteConfigDefaults,
-        disabled: false,
-        projectName: 'backbase-retail-prototypes',
-        serviceRoot: '/api/remote-config'
-      }),
+      appName: 'bb-retail-app-ang',
+      appVersion: '2021.11-beta',
+      defaults: remoteConfigDefaults,
+      disabled: false,
+      projectName: 'backbase-retail-prototypes',
+      serviceRoot: '/api/remote-config',
+    }),
     MegaMenuNavigationContainerModule,
     LayoutContainerModule,
     HeadingWidgetModule,
@@ -135,57 +137,135 @@ export function configureMegaMenuPagesRendering(remoteConfig: RemoteConfigServic
     TransactionSigningModule.withConfig({
       useRedirectFlow: false,
     }),
-    ImpersonationBannerWidgetModule
+    ImpersonationBannerWidgetModule,
   ],
-  providers: [...environment.mockProviders || [], AnimationProvider, HttpXsrfProvider, CanDeactivateGuard, {
-    provide: APP_INITIALIZER, useFactory: applicationInitializer, multi: true, deps: [RemoteConfigService]
-  }, {
-    provide: MEGA_MENU_CONTAINER_CONFIG, useFactory: configureMegaMenuPagesRendering, deps: [RemoteConfigService]
-  }, {
-    provide: CARDS_BASE_PATH, useFactory: getBasePath('cards-presentation-service'), deps: [PAGE_CONFIG]
-  }, {
-    provide: TRANSACTIONS_BASE_PATH, useFactory: getBasePath('transaction-manager'), deps: [PAGE_CONFIG]
-  }, {
-    provide: ARRANGEMENT_MANAGER_BASE_PATH, useFactory: getBasePath('arrangement-manager'), deps: [PAGE_CONFIG]
-  }, {
-    provide: SAVING_GOALS_BASE_PATH, useFactory: getBasePath('saving-goal-planner'), deps: [PAGE_CONFIG]
-  }, {
-    provide: CATEGORIES_MANAGEMENT_BASE_PATH, useFactory: getBasePath('transaction-category-collector'), deps: [PAGE_CONFIG]
-  }, {
-    provide: BUDGETING_BASE_PATH, useFactory: getBasePath('budget-planner'), deps: [PAGE_CONFIG]
-  }, {
-    provide: AUTHORIZED_USER_BASE_PATH, useFactory: getBasePath('authorized-user'), deps: [PAGE_CONFIG]
-  }, {
-    provide: BILLPAY_BASE_PATH, useFactory: getBasePath('billpay-integrator'), deps: [PAGE_CONFIG]
-  }, {
-    provide: CONTACT_MANAGER_BASE_PATH, useFactory: getBasePath('contact-manager'), deps: [PAGE_CONFIG]
-  }, {
-    provide: PAYMENT_ORDER_BASE_PATH, useFactory: getBasePath('payment-order-service'), deps: [PAGE_CONFIG]
-  }, {
-    provide: STOP_CHECKS_BASE_PATH, useFactory: getBasePath('stop-checks'), deps: [PAGE_CONFIG]
-  }, {
-    provide: ACCOUNT_STATEMENT_BASE_PATH, useFactory: getBasePath('account-statement'), deps: [PAGE_CONFIG]
-  }, {
-    provide: USER_BASE_PATH, useFactory: getBasePath('user-manager'), deps: [PAGE_CONFIG]
-  }, {
-    provide: DEVICE_BASE_PATH, useFactory: getBasePath('device-management-service'), deps: [PAGE_CONFIG]
-  }, {
-    provide: PAYMENT_ORDER_A2A_BASE_PATH, useFactory: getBasePath('payment-order-a2a'), deps: [PAGE_CONFIG]
-  }, {
-    provide: PLACES_BASE_PATH, useFactory: getBasePath('places-presentation-service'), deps: [PAGE_CONFIG]
-  }, {
-    provide: MESSAGES_BASE_PATH, useFactory: getBasePath('messages-service'), deps: [PAGE_CONFIG]
-  }, {
-    provide: ACTIONS_BASE_PATH, useFactory: getBasePath('action'), deps: [PAGE_CONFIG]
-  }, {
-    provide: NOTIFICATIONS_BASE_PATH, useFactory: getBasePath('notifications-service'), deps: [PAGE_CONFIG]
-  }, {
-    provide: ACCESS_CONTROL_BASE_PATH, useFactory: getBasePath('access-control'), deps: [PAGE_CONFIG]
-  }, {
-    provide: CONSENT_BASE_PATH, useFactory: getBasePath('consent'), deps: [PAGE_CONFIG]
-  }, {
-    provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
-  }],
-  bootstrap: [AppComponent]
+  providers: [
+    ...(environment.mockProviders || []),
+    AnimationProvider,
+    HttpXsrfProvider,
+    CanDeactivateGuard,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: applicationInitializer,
+      multi: true,
+      deps: [RemoteConfigService],
+    },
+    {
+      provide: MEGA_MENU_CONTAINER_CONFIG,
+      useFactory: configureMegaMenuPagesRendering,
+      deps: [RemoteConfigService],
+    },
+    {
+      provide: CARDS_BASE_PATH,
+      useFactory: getBasePath('cards-presentation-service'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: TRANSACTIONS_BASE_PATH,
+      useFactory: getBasePath('transaction-manager'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: ARRANGEMENT_MANAGER_BASE_PATH,
+      useFactory: getBasePath('arrangement-manager'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: SAVING_GOALS_BASE_PATH,
+      useFactory: getBasePath('saving-goal-planner'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: CATEGORIES_MANAGEMENT_BASE_PATH,
+      useFactory: getBasePath('transaction-category-collector'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: BUDGETING_BASE_PATH,
+      useFactory: getBasePath('budget-planner'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: AUTHORIZED_USER_BASE_PATH,
+      useFactory: getBasePath('authorized-user'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: BILLPAY_BASE_PATH,
+      useFactory: getBasePath('billpay-integrator'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: CONTACT_MANAGER_BASE_PATH,
+      useFactory: getBasePath('contact-manager'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: PAYMENT_ORDER_BASE_PATH,
+      useFactory: getBasePath('payment-order-service'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: STOP_CHECKS_BASE_PATH,
+      useFactory: getBasePath('stop-checks'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: ACCOUNT_STATEMENT_BASE_PATH,
+      useFactory: getBasePath('account-statement'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: USER_BASE_PATH,
+      useFactory: getBasePath('user-manager'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: DEVICE_BASE_PATH,
+      useFactory: getBasePath('device-management-service'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: PAYMENT_ORDER_A2A_BASE_PATH,
+      useFactory: getBasePath('payment-order-a2a'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: PLACES_BASE_PATH,
+      useFactory: getBasePath('places-presentation-service'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: MESSAGES_BASE_PATH,
+      useFactory: getBasePath('messages-service'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: ACTIONS_BASE_PATH,
+      useFactory: getBasePath('action'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: NOTIFICATIONS_BASE_PATH,
+      useFactory: getBasePath('notifications-service'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: ACCESS_CONTROL_BASE_PATH,
+      useFactory: getBasePath('access-control'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: CONSENT_BASE_PATH,
+      useFactory: getBasePath('consent'),
+      deps: [PAGE_CONFIG],
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
