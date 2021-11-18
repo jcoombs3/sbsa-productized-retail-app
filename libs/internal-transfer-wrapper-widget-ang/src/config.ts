@@ -227,7 +227,7 @@ const schedule: PaymentFormGroup = {
   ],
 };
 
-export const INTERNAL_TRANSFER: PaymentTypeConfig = {
+export const IAT: PaymentTypeConfig = {
   name: 'IAT',
   paymentType: 'IAT',
   fields: [initiator, counterParty, remittanceInfo, schedule],

@@ -9,6 +9,7 @@ import {
   INTRABANK_TRANSFER,
   UK_FASTER_PAYMENT,
 } from '@backbase/retail-ang/payment-configs';
+import { IAT } from './config';
 import {
   PayordOmniPaymentWidgetAngComponent,
   PaymentTypeConfig,
@@ -76,6 +77,8 @@ export class InternalTransferWrapperWidgetAngComponent {
         return INTERNAL_TRANSFER;
       case 'INTRABANK_TRANSFER':
         return INTRABANK_TRANSFER;
+      case 'IAT':
+        return IAT;
       default:
         return undefined;
     }
@@ -97,6 +100,8 @@ export class InternalTransferWrapperWidgetAngComponent {
         return 'A2A Transfer';
       case 'INTRABANK_TRANSFER':
         return 'A2A Transfer';
+      case 'IAT':
+        return 'Payment IAT';
     }
     return 'SEPA CT';
   }
