@@ -1,0 +1,40 @@
+<bb-modal-ui
+  [isOpen]="isOpen"
+  (cancel)="onCancel()"
+  (confirm)="onDiscard()">
+  <bb-modal-header-ui title="Discard entered data?" i18n-title="omni-payment-review-discard-modal-title"></bb-modal-header-ui>
+  <bb-modal-body-ui>
+    <ng-template bbCustomModalBody>
+      <ng-container i18n="@@omni-payment-review-discard-modal-content">
+        Are you sure to exit and discard all changes? Entered data will be lost.
+      </ng-container>
+    </ng-template>
+  </bb-modal-body-ui>
+
+  <bb-modal-footer-ui #modalFooterRef>
+    <ng-template bbCustomModalFooter>
+      <div class="bb-button-bar">
+        <button
+          bbButton
+          color="danger"
+          class="bb-button-bar__button"
+          (click)="onDiscard()"
+          data-role="discard-action-btn"
+          i18n="@@omni-payment-review-discard-modal-discard-btn">
+          Discard
+        </button>
+
+        <button
+          bbButton
+          class="bb-button-bar__button"
+          color="secondary"
+          (click)="onCancel()"
+          data-role="cancel-action-btn"
+          i18n="@@omni-payment-review-discard-modal-cancel-btn"
+        >
+          Cancel
+        </button>
+      </div>
+    </ng-template>
+  </bb-modal-footer-ui>
+</bb-modal-ui>
